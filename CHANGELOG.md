@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+* this is a  initial release of social_feed_reaction package which have basic functionality to use it.
