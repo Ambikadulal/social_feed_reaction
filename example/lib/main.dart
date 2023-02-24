@@ -25,7 +25,7 @@ class SocialReactionMainPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Flutter Social Reaction ',
+          'Flutter Social Feed Reaction ',
           style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
