@@ -441,8 +441,7 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         child: Transform.scale(
                           scale: zoomIconWhenRelease.value,
                           child: Image.asset(
-                            widget.likeGif ??
-                                'packages/social_feed_reaction/packages/social_feed_reaction/images/like.gif',
+                            widget.likeGif ?? 'packages/social_feed_reaction/images/like.gif',
                             width: 40.0,
                             height: 40.0,
                           ),
