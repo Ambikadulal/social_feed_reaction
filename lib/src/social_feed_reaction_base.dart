@@ -441,7 +441,8 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         child: Transform.scale(
                           scale: zoomIconWhenRelease.value,
                           child: Image.asset(
-                            widget.likeGif ?? 'images/like.gif',
+                            widget.likeGif ??
+                                'packages/social_feed_reaction/packages/social_feed_reaction/images/like.gif',
                             width: 40.0,
                             height: 40.0,
                           ),
@@ -459,7 +460,7 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         child: Transform.scale(
                           scale: zoomIconWhenRelease.value,
                           child: Image.asset(
-                            widget.loveGif ?? 'images/love.gif',
+                            widget.loveGif ?? 'packages/social_feed_reaction/images/love.gif',
                             width: 40.0,
                             height: 40.0,
                           ),
@@ -477,7 +478,7 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         child: Transform.scale(
                           scale: zoomIconWhenRelease.value,
                           child: Image.asset(
-                            widget.hahaGif ?? 'images/haha.gif',
+                            widget.hahaGif ?? 'packages/social_feed_reaction/images/haha.gif',
                             width: 40.0,
                             height: 40.0,
                           ),
@@ -495,7 +496,7 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         child: Transform.scale(
                           scale: zoomIconWhenRelease.value,
                           child: Image.asset(
-                            widget.wowGif ?? 'images/wow.gif',
+                            widget.wowGif ?? 'packages/social_feed_reaction/images/wow.gif',
                             width: 40.0,
                             height: 40.0,
                           ),
@@ -513,7 +514,7 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         child: Transform.scale(
                           scale: zoomIconWhenRelease.value,
                           child: Image.asset(
-                            widget.sadGif ?? 'images/sad.gif',
+                            widget.sadGif ?? 'packages/social_feed_reaction/images/sad.gif',
                             width: 40.0,
                             height: 40.0,
                           ),
@@ -531,7 +532,7 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         child: Transform.scale(
                           scale: zoomIconWhenRelease.value,
                           child: Image.asset(
-                            widget.angryGif ?? 'images/angry.gif',
+                            widget.angryGif ?? 'packages/social_feed_reaction/images/angry.gif',
                             width: 40.0,
                             height: 40.0,
                           ),
@@ -616,7 +617,7 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         )
                       : const SizedBox(),
                   Image.asset(
-                    widget.likeGif ?? 'images/like.gif',
+                    widget.likeGif ?? 'packages/social_feed_reaction/images/like.gif',
                     width: 40.0,
                     height: 40.0,
                     fit: BoxFit.contain,
@@ -658,7 +659,7 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         )
                       : const SizedBox(),
                   Image.asset(
-                    widget.loveGif ?? 'images/love.gif',
+                    widget.loveGif ?? 'packages/social_feed_reaction/images/love.gif',
                     width: 40.0,
                     height: 40.0,
                     fit: BoxFit.contain,
@@ -700,7 +701,7 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         )
                       : const SizedBox(),
                   Image.asset(
-                    widget.hahaGif ?? 'images/haha.gif',
+                    widget.hahaGif ?? 'packages/social_feed_reaction/images/haha.gif',
                     width: 40.0,
                     height: 40.0,
                     fit: BoxFit.contain,
@@ -742,7 +743,7 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         )
                       : const SizedBox(),
                   Image.asset(
-                    widget.wowGif ?? 'images/wow.gif',
+                    widget.wowGif ?? 'packages/social_feed_reaction/images/wow.gif',
                     width: 40.0,
                     height: 40.0,
                     fit: BoxFit.contain,
@@ -786,7 +787,7 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         )
                       : const SizedBox(),
                   Image.asset(
-                    widget.sadGif ?? 'images/sad.gif',
+                    widget.sadGif ?? 'packages/social_feed_reaction/images/sad.gif',
                     width: 40.0,
                     height: 40.0,
                     fit: BoxFit.contain,
@@ -830,7 +831,7 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         )
                       : const SizedBox(),
                   Image.asset(
-                    widget.angryGif ?? 'images/angry.gif',
+                    widget.angryGif ?? 'packages/social_feed_reaction/images/angry.gif',
                     width: 40.0,
                     height: 40.0,
                     fit: BoxFit.contain,
@@ -949,26 +950,26 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
 
   String getImageIconBtn() {
     if (!isLongPress && isLiked) {
-      return widget.likeFillPng ?? 'images/ic_like_fill.png';
+      return widget.likeFillPng ?? 'packages/social_feed_reaction/images/ic_like_fill.png';
     } else if (!isDragging) {
       switch (whichIconUserChoose) {
         case 1:
-          return widget.likeFillPng ?? 'images/ic_like_fill.png';
+          return widget.likeFillPng ?? 'packages/social_feed_reaction/images/ic_like_fill.png';
         case 2:
-          return widget.lovePng ?? 'images/love2.png';
+          return widget.lovePng ?? 'packages/social_feed_reaction/images/love2.png';
         case 3:
-          return widget.hahaPng ?? 'images/haha2.png';
+          return widget.hahaPng ?? 'packages/social_feed_reaction/images/haha2.png';
         case 4:
-          return widget.wowPng ?? 'images/wow2.png';
+          return widget.wowPng ?? 'packages/social_feed_reaction/images/wow2.png';
         case 5:
-          return widget.sadPng ?? 'images/sad2.png';
+          return widget.sadPng ?? 'packages/social_feed_reaction/images/sad2.png';
         case 6:
-          return widget.angryPng ?? 'images/angry2.png';
+          return widget.angryPng ?? 'packages/social_feed_reaction/images/angry2.png';
         default:
-          return widget.likePng ?? 'images/ic_like.png';
+          return widget.likePng ?? 'packages/social_feed_reaction/images/ic_like.png';
       }
     } else {
-      return widget.likePng ?? 'images/ic_like.png';
+      return widget.likePng ?? 'packages/social_feed_reaction/images/ic_like.png';
     }
   }
 
