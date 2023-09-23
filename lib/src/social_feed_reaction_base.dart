@@ -64,7 +64,8 @@ class SocialReactionCollection extends StatefulWidget {
   createState() => SocialReactionCollectionState();
 }
 
-class SocialReactionCollectionState extends State<SocialReactionCollection> with TickerProviderStateMixin {
+class SocialReactionCollectionState extends State<SocialReactionCollection>
+    with TickerProviderStateMixin {
   late AudioPlayer audioPlayer;
   int durationAnimationBox = 500;
   int durationAnimationBtnLongPress = 150;
@@ -77,8 +78,18 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
   late Animation zoomIconLikeInBtn, tiltIconLikeInBtn, zoomTextLikeInBtn;
   late Animation fadeInBox;
   late Animation moveRightGroupIcon;
-  late Animation pushIconLikeUp, pushIconLoveUp, pushIconHahaUp, pushIconWowUp, pushIconSadUp, pushIconAngryUp;
-  late Animation zoomIconLike, zoomIconLove, zoomIconHaha, zoomIconWow, zoomIconSad, zoomIconAngry;
+  late Animation pushIconLikeUp,
+      pushIconLoveUp,
+      pushIconHahaUp,
+      pushIconWowUp,
+      pushIconSadUp,
+      pushIconAngryUp;
+  late Animation zoomIconLike,
+      zoomIconLove,
+      zoomIconHaha,
+      zoomIconWow,
+      zoomIconSad,
+      zoomIconAngry;
 
 // For short press btn
   late AnimationController animControlBtnShortPress;
@@ -150,11 +161,15 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
 
   initAnimationBtnLike() {
 // long press
-    animControlBtnLongPress =
-        AnimationController(vsync: this, duration: Duration(milliseconds: durationAnimationBtnLongPress));
-    zoomIconLikeInBtn = Tween(begin: 1.0, end: 0.85).animate(animControlBtnLongPress);
-    tiltIconLikeInBtn = Tween(begin: 0.0, end: 0.2).animate(animControlBtnLongPress);
-    zoomTextLikeInBtn = Tween(begin: 1.0, end: 0.85).animate(animControlBtnLongPress);
+    animControlBtnLongPress = AnimationController(
+        vsync: this,
+        duration: Duration(milliseconds: durationAnimationBtnLongPress));
+    zoomIconLikeInBtn =
+        Tween(begin: 1.0, end: 0.85).animate(animControlBtnLongPress);
+    tiltIconLikeInBtn =
+        Tween(begin: 0.0, end: 0.2).animate(animControlBtnLongPress);
+    zoomTextLikeInBtn =
+        Tween(begin: 1.0, end: 0.85).animate(animControlBtnLongPress);
 
     zoomIconLikeInBtn.addListener(() {
       setState(() {});
@@ -167,10 +182,13 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
     });
 
 // short press
-    animControlBtnShortPress =
-        AnimationController(vsync: this, duration: Duration(milliseconds: durationAnimationBtnShortPress));
-    zoomIconLikeInBtn2 = Tween(begin: 1.0, end: 0.2).animate(animControlBtnShortPress);
-    tiltIconLikeInBtn2 = Tween(begin: 0.0, end: 0.8).animate(animControlBtnShortPress);
+    animControlBtnShortPress = AnimationController(
+        vsync: this,
+        duration: Duration(milliseconds: durationAnimationBtnShortPress));
+    zoomIconLikeInBtn2 =
+        Tween(begin: 1.0, end: 0.2).animate(animControlBtnShortPress);
+    tiltIconLikeInBtn2 =
+        Tween(begin: 0.0, end: 0.8).animate(animControlBtnShortPress);
 
     zoomIconLikeInBtn2.addListener(() {
       setState(() {});
@@ -181,7 +199,8 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
   }
 
   initAnimationBoxAndIcons() {
-    animControlBox = AnimationController(vsync: this, duration: Duration(milliseconds: durationAnimationBox));
+    animControlBox = AnimationController(
+        vsync: this, duration: Duration(milliseconds: durationAnimationBox));
 
 // General
     moveRightGroupIcon = Tween(begin: 0.0, end: 10.0).animate(
@@ -281,12 +300,16 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
   }
 
   initAnimationIconWhenDrag() {
-    animControlIconWhenDrag =
-        AnimationController(vsync: this, duration: Duration(milliseconds: durationAnimationIconWhenDrag));
+    animControlIconWhenDrag = AnimationController(
+        vsync: this,
+        duration: Duration(milliseconds: durationAnimationIconWhenDrag));
 
-    zoomIconChosen = Tween(begin: 1.0, end: 1.8).animate(animControlIconWhenDrag);
-    zoomIconNotChosen = Tween(begin: 1.0, end: 0.8).animate(animControlIconWhenDrag);
-    zoomBoxIcon = Tween(begin: 50.0, end: 40.0).animate(animControlIconWhenDrag);
+    zoomIconChosen =
+        Tween(begin: 1.0, end: 1.8).animate(animControlIconWhenDrag);
+    zoomIconNotChosen =
+        Tween(begin: 1.0, end: 0.8).animate(animControlIconWhenDrag);
+    zoomBoxIcon =
+        Tween(begin: 50.0, end: 40.0).animate(animControlIconWhenDrag);
 
     zoomIconChosen.addListener(() {
       setState(() {});
@@ -300,27 +323,33 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
   }
 
   initAnimationIconWhenDragOutside() {
-    animControlIconWhenDragOutside =
-        AnimationController(vsync: this, duration: Duration(milliseconds: durationAnimationIconWhenDrag));
-    zoomIconWhenDragOutside = Tween(begin: 0.8, end: 1.0).animate(animControlIconWhenDragOutside);
+    animControlIconWhenDragOutside = AnimationController(
+        vsync: this,
+        duration: Duration(milliseconds: durationAnimationIconWhenDrag));
+    zoomIconWhenDragOutside =
+        Tween(begin: 0.8, end: 1.0).animate(animControlIconWhenDragOutside);
     zoomIconWhenDragOutside.addListener(() {
       setState(() {});
     });
   }
 
   initAnimationBoxWhenDragOutside() {
-    animControlBoxWhenDragOutside =
-        AnimationController(vsync: this, duration: Duration(milliseconds: durationAnimationIconWhenDrag));
-    zoomBoxWhenDragOutside = Tween(begin: 40.0, end: 50.0).animate(animControlBoxWhenDragOutside);
+    animControlBoxWhenDragOutside = AnimationController(
+        vsync: this,
+        duration: Duration(milliseconds: durationAnimationIconWhenDrag));
+    zoomBoxWhenDragOutside =
+        Tween(begin: 40.0, end: 50.0).animate(animControlBoxWhenDragOutside);
     zoomBoxWhenDragOutside.addListener(() {
       setState(() {});
     });
   }
 
   initAnimationIconWhenDragInside() {
-    animControlIconWhenDragInside =
-        AnimationController(vsync: this, duration: Duration(milliseconds: durationAnimationIconWhenDrag));
-    zoomIconWhenDragInside = Tween(begin: 1.0, end: 0.8).animate(animControlIconWhenDragInside);
+    animControlIconWhenDragInside = AnimationController(
+        vsync: this,
+        duration: Duration(milliseconds: durationAnimationIconWhenDrag));
+    zoomIconWhenDragInside =
+        Tween(begin: 1.0, end: 0.8).animate(animControlIconWhenDragInside);
     zoomIconWhenDragInside.addListener(() {
       setState(() {});
     });
@@ -332,27 +361,35 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
   }
 
   initAnimationIconWhenRelease() {
-    animControlIconWhenRelease =
-        AnimationController(vsync: this, duration: Duration(milliseconds: durationAnimationIconWhenRelease));
+    animControlIconWhenRelease = AnimationController(
+        vsync: this,
+        duration: Duration(milliseconds: durationAnimationIconWhenRelease));
 
-    zoomIconWhenRelease = Tween(begin: 1.8, end: 0.0)
-        .animate(CurvedAnimation(parent: animControlIconWhenRelease, curve: Curves.decelerate));
+    zoomIconWhenRelease = Tween(begin: 1.8, end: 0.0).animate(CurvedAnimation(
+        parent: animControlIconWhenRelease, curve: Curves.decelerate));
 
-    moveUpIconWhenRelease = Tween(begin: 180.0, end: 0.0)
-        .animate(CurvedAnimation(parent: animControlIconWhenRelease, curve: Curves.decelerate));
+    moveUpIconWhenRelease = Tween(begin: 180.0, end: 0.0).animate(
+        CurvedAnimation(
+            parent: animControlIconWhenRelease, curve: Curves.decelerate));
 
-    moveLeftIconLikeWhenRelease = Tween(begin: 20.0, end: 10.0)
-        .animate(CurvedAnimation(parent: animControlIconWhenRelease, curve: Curves.decelerate));
-    moveLeftIconLoveWhenRelease = Tween(begin: 68.0, end: 10.0)
-        .animate(CurvedAnimation(parent: animControlIconWhenRelease, curve: Curves.decelerate));
-    moveLeftIconHahaWhenRelease = Tween(begin: 116.0, end: 10.0)
-        .animate(CurvedAnimation(parent: animControlIconWhenRelease, curve: Curves.decelerate));
-    moveLeftIconWowWhenRelease = Tween(begin: 164.0, end: 10.0)
-        .animate(CurvedAnimation(parent: animControlIconWhenRelease, curve: Curves.decelerate));
-    moveLeftIconSadWhenRelease = Tween(begin: 212.0, end: 10.0)
-        .animate(CurvedAnimation(parent: animControlIconWhenRelease, curve: Curves.decelerate));
-    moveLeftIconAngryWhenRelease = Tween(begin: 260.0, end: 10.0)
-        .animate(CurvedAnimation(parent: animControlIconWhenRelease, curve: Curves.decelerate));
+    moveLeftIconLikeWhenRelease = Tween(begin: 20.0, end: 10.0).animate(
+        CurvedAnimation(
+            parent: animControlIconWhenRelease, curve: Curves.decelerate));
+    moveLeftIconLoveWhenRelease = Tween(begin: 68.0, end: 10.0).animate(
+        CurvedAnimation(
+            parent: animControlIconWhenRelease, curve: Curves.decelerate));
+    moveLeftIconHahaWhenRelease = Tween(begin: 116.0, end: 10.0).animate(
+        CurvedAnimation(
+            parent: animControlIconWhenRelease, curve: Curves.decelerate));
+    moveLeftIconWowWhenRelease = Tween(begin: 164.0, end: 10.0).animate(
+        CurvedAnimation(
+            parent: animControlIconWhenRelease, curve: Curves.decelerate));
+    moveLeftIconSadWhenRelease = Tween(begin: 212.0, end: 10.0).animate(
+        CurvedAnimation(
+            parent: animControlIconWhenRelease, curve: Curves.decelerate));
+    moveLeftIconAngryWhenRelease = Tween(begin: 260.0, end: 10.0).animate(
+        CurvedAnimation(
+            parent: animControlIconWhenRelease, curve: Curves.decelerate));
 
     zoomIconWhenRelease.addListener(() {
       setState(() {});
@@ -441,7 +478,8 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         child: Transform.scale(
                           scale: zoomIconWhenRelease.value,
                           child: Image.asset(
-                            widget.likeGif ?? 'packages/social_feed_reaction/images/like.gif',
+                            widget.likeGif ??
+                                'packages/social_feed_reaction/images/like.gif',
                             width: 40.0,
                             height: 40.0,
                           ),
@@ -459,7 +497,8 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         child: Transform.scale(
                           scale: zoomIconWhenRelease.value,
                           child: Image.asset(
-                            widget.loveGif ?? 'packages/social_feed_reaction/images/love.gif',
+                            widget.loveGif ??
+                                'packages/social_feed_reaction/images/love.gif',
                             width: 40.0,
                             height: 40.0,
                           ),
@@ -477,7 +516,8 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         child: Transform.scale(
                           scale: zoomIconWhenRelease.value,
                           child: Image.asset(
-                            widget.hahaGif ?? 'packages/social_feed_reaction/images/haha.gif',
+                            widget.hahaGif ??
+                                'packages/social_feed_reaction/images/haha.gif',
                             width: 40.0,
                             height: 40.0,
                           ),
@@ -495,7 +535,8 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         child: Transform.scale(
                           scale: zoomIconWhenRelease.value,
                           child: Image.asset(
-                            widget.wowGif ?? 'packages/social_feed_reaction/images/wow.gif',
+                            widget.wowGif ??
+                                'packages/social_feed_reaction/images/wow.gif',
                             width: 40.0,
                             height: 40.0,
                           ),
@@ -513,7 +554,8 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         child: Transform.scale(
                           scale: zoomIconWhenRelease.value,
                           child: Image.asset(
-                            widget.sadGif ?? 'packages/social_feed_reaction/images/sad.gif',
+                            widget.sadGif ??
+                                'packages/social_feed_reaction/images/sad.gif',
                             width: 40.0,
                             height: 40.0,
                           ),
@@ -531,7 +573,8 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                         child: Transform.scale(
                           scale: zoomIconWhenRelease.value,
                           child: Image.asset(
-                            widget.angryGif ?? 'packages/social_feed_reaction/images/angry.gif',
+                            widget.angryGif ??
+                                'packages/social_feed_reaction/images/angry.gif',
                             width: 40.0,
                             height: 40.0,
                           ),
@@ -559,7 +602,8 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                 color: Colors.grey,
                 blurRadius: 5.0,
 // LT-RB
-                offset: Offset.lerp(const Offset(0.0, 0.0), const Offset(0.0, 0.5), 10.0)!),
+                offset: Offset.lerp(
+                    const Offset(0.0, 0.0), const Offset(0.0, 0.5), 10.0)!),
           ],
         ),
         width: 300.0,
@@ -607,16 +651,19 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                             borderRadius: BorderRadius.circular(10.0),
                             color: Colors.black.withOpacity(0.3),
                           ),
-                          padding: const EdgeInsets.only(left: 7.0, right: 7.0, top: 2.0, bottom: 2.0),
+                          padding: const EdgeInsets.only(
+                              left: 7.0, right: 7.0, top: 2.0, bottom: 2.0),
                           margin: const EdgeInsets.only(bottom: 8.0),
                           child: Text(
                             widget.likeText ?? 'Like',
-                            style: const TextStyle(fontSize: 8.0, color: Colors.white),
+                            style: const TextStyle(
+                                fontSize: 8.0, color: Colors.white),
                           ),
                         )
                       : const SizedBox(),
                   Image.asset(
-                    widget.likeGif ?? 'packages/social_feed_reaction/images/like.gif',
+                    widget.likeGif ??
+                        'packages/social_feed_reaction/images/like.gif',
                     width: 40.0,
                     height: 40.0,
                     fit: BoxFit.contain,
@@ -648,17 +695,21 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                   currentIconFocus == 2
                       ? Container(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0), color: Colors.black.withOpacity(0.3)),
-                          padding: const EdgeInsets.only(left: 7.0, right: 7.0, top: 2.0, bottom: 2.0),
+                              borderRadius: BorderRadius.circular(10.0),
+                              color: Colors.black.withOpacity(0.3)),
+                          padding: const EdgeInsets.only(
+                              left: 7.0, right: 7.0, top: 2.0, bottom: 2.0),
                           margin: const EdgeInsets.only(bottom: 8.0),
                           child: Text(
                             widget.loveText ?? 'Love',
-                            style: const TextStyle(fontSize: 8.0, color: Colors.white),
+                            style: const TextStyle(
+                                fontSize: 8.0, color: Colors.white),
                           ),
                         )
                       : const SizedBox(),
                   Image.asset(
-                    widget.loveGif ?? 'packages/social_feed_reaction/images/love.gif',
+                    widget.loveGif ??
+                        'packages/social_feed_reaction/images/love.gif',
                     width: 40.0,
                     height: 40.0,
                     fit: BoxFit.contain,
@@ -690,17 +741,21 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                   currentIconFocus == 3
                       ? Container(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0), color: Colors.black.withOpacity(0.3)),
-                          padding: const EdgeInsets.only(left: 7.0, right: 7.0, top: 2.0, bottom: 2.0),
+                              borderRadius: BorderRadius.circular(10.0),
+                              color: Colors.black.withOpacity(0.3)),
+                          padding: const EdgeInsets.only(
+                              left: 7.0, right: 7.0, top: 2.0, bottom: 2.0),
                           margin: const EdgeInsets.only(bottom: 8.0),
                           child: Text(
                             widget.hahaText ?? 'Haha',
-                            style: const TextStyle(fontSize: 8.0, color: Colors.white),
+                            style: const TextStyle(
+                                fontSize: 8.0, color: Colors.white),
                           ),
                         )
                       : const SizedBox(),
                   Image.asset(
-                    widget.hahaGif ?? 'packages/social_feed_reaction/images/haha.gif',
+                    widget.hahaGif ??
+                        'packages/social_feed_reaction/images/haha.gif',
                     width: 40.0,
                     height: 40.0,
                     fit: BoxFit.contain,
@@ -732,17 +787,21 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                   currentIconFocus == 4
                       ? Container(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10.0), color: Colors.black.withOpacity(0.3)),
-                          padding: const EdgeInsets.only(left: 7.0, right: 7.0, top: 2.0, bottom: 2.0),
+                              borderRadius: BorderRadius.circular(10.0),
+                              color: Colors.black.withOpacity(0.3)),
+                          padding: const EdgeInsets.only(
+                              left: 7.0, right: 7.0, top: 2.0, bottom: 2.0),
                           margin: const EdgeInsets.only(bottom: 8.0),
                           child: Text(
                             widget.wowText ?? 'Wow',
-                            style: const TextStyle(fontSize: 8.0, color: Colors.white),
+                            style: const TextStyle(
+                                fontSize: 8.0, color: Colors.white),
                           ),
                         )
                       : const SizedBox(),
                   Image.asset(
-                    widget.wowGif ?? 'packages/social_feed_reaction/images/wow.gif',
+                    widget.wowGif ??
+                        'packages/social_feed_reaction/images/wow.gif',
                     width: 40.0,
                     height: 40.0,
                     fit: BoxFit.contain,
@@ -777,16 +836,19 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                             borderRadius: BorderRadius.circular(10.0),
                             color: Colors.black.withOpacity(0.3),
                           ),
-                          padding: const EdgeInsets.only(left: 7.0, right: 7.0, top: 2.0, bottom: 2.0),
+                          padding: const EdgeInsets.only(
+                              left: 7.0, right: 7.0, top: 2.0, bottom: 2.0),
                           margin: const EdgeInsets.only(bottom: 8.0),
                           child: Text(
                             widget.sadText ?? 'Sad',
-                            style: const TextStyle(fontSize: 8.0, color: Colors.white),
+                            style: const TextStyle(
+                                fontSize: 8.0, color: Colors.white),
                           ),
                         )
                       : const SizedBox(),
                   Image.asset(
-                    widget.sadGif ?? 'packages/social_feed_reaction/images/sad.gif',
+                    widget.sadGif ??
+                        'packages/social_feed_reaction/images/sad.gif',
                     width: 40.0,
                     height: 40.0,
                     fit: BoxFit.contain,
@@ -821,16 +883,19 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
                             borderRadius: BorderRadius.circular(10.0),
                             color: Colors.black.withOpacity(0.3),
                           ),
-                          padding: const EdgeInsets.only(left: 7.0, right: 7.0, top: 2.0, bottom: 2.0),
+                          padding: const EdgeInsets.only(
+                              left: 7.0, right: 7.0, top: 2.0, bottom: 2.0),
                           margin: const EdgeInsets.only(bottom: 8.0),
                           child: Text(
                             widget.angryText ?? 'Angry',
-                            style: const TextStyle(fontSize: 8.0, color: Colors.white),
+                            style: const TextStyle(
+                                fontSize: 8.0, color: Colors.white),
                           ),
                         )
                       : const SizedBox(),
                   Image.asset(
-                    widget.angryGif ?? 'packages/social_feed_reaction/images/angry.gif',
+                    widget.angryGif ??
+                        'packages/social_feed_reaction/images/angry.gif',
                     width: 40.0,
                     height: 40.0,
                     fit: BoxFit.contain,
@@ -867,11 +932,13 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
             children: <Widget>[
 // Icon like
               Transform.scale(
-                scale:
-                    !isLongPress ? handleOutputRangeZoomInIconLike(zoomIconLikeInBtn2.value) : zoomIconLikeInBtn.value,
+                scale: !isLongPress
+                    ? handleOutputRangeZoomInIconLike(zoomIconLikeInBtn2.value)
+                    : zoomIconLikeInBtn.value,
                 child: Transform.rotate(
-                  angle:
-                      !isLongPress ? handleOutputRangeTiltIconLike(tiltIconLikeInBtn2.value) : tiltIconLikeInBtn.value,
+                  angle: !isLongPress
+                      ? handleOutputRangeTiltIconLike(tiltIconLikeInBtn2.value)
+                      : tiltIconLikeInBtn.value,
                   child: Image.asset(
                     getImageIconBtn(),
                     width: 25.0,
@@ -884,8 +951,9 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
 
 // Text like
               Transform.scale(
-                scale:
-                    !isLongPress ? handleOutputRangeZoomInIconLike(zoomIconLikeInBtn2.value) : zoomTextLikeInBtn.value,
+                scale: !isLongPress
+                    ? handleOutputRangeZoomInIconLike(zoomIconLikeInBtn2.value)
+                    : zoomTextLikeInBtn.value,
                 child: Text(
                   getTextBtn(),
                   style: TextStyle(
@@ -949,26 +1017,35 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
 
   String getImageIconBtn() {
     if (!isLongPress && isLiked) {
-      return widget.likeFillPng ?? 'packages/social_feed_reaction/images/ic_like_fill.png';
+      return widget.likeFillPng ??
+          'packages/social_feed_reaction/images/ic_like_fill.png';
     } else if (!isDragging) {
       switch (whichIconUserChoose) {
         case 1:
-          return widget.likeFillPng ?? 'packages/social_feed_reaction/images/ic_like_fill.png';
+          return widget.likeFillPng ??
+              'packages/social_feed_reaction/images/ic_like_fill.png';
         case 2:
-          return widget.lovePng ?? 'packages/social_feed_reaction/images/love2.png';
+          return widget.lovePng ??
+              'packages/social_feed_reaction/images/love2.png';
         case 3:
-          return widget.hahaPng ?? 'packages/social_feed_reaction/images/haha2.png';
+          return widget.hahaPng ??
+              'packages/social_feed_reaction/images/haha2.png';
         case 4:
-          return widget.wowPng ?? 'packages/social_feed_reaction/images/wow2.png';
+          return widget.wowPng ??
+              'packages/social_feed_reaction/images/wow2.png';
         case 5:
-          return widget.sadPng ?? 'packages/social_feed_reaction/images/sad2.png';
+          return widget.sadPng ??
+              'packages/social_feed_reaction/images/sad2.png';
         case 6:
-          return widget.angryPng ?? 'packages/social_feed_reaction/images/angry2.png';
+          return widget.angryPng ??
+              'packages/social_feed_reaction/images/angry2.png';
         default:
-          return widget.likePng ?? 'packages/social_feed_reaction/images/ic_like.png';
+          return widget.likePng ??
+              'packages/social_feed_reaction/images/ic_like.png';
       }
     } else {
-      return widget.likePng ?? 'packages/social_feed_reaction/images/ic_like.png';
+      return widget.likePng ??
+          'packages/social_feed_reaction/images/ic_like.png';
     }
   }
 
@@ -1032,7 +1109,8 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
 // and plus the height of toolbar and the status bar
 // so the range we check is about 200 -> 500
 
-    if (dragUpdateDetail.globalPosition.dy >= 200 && dragUpdateDetail.globalPosition.dy <= 500) {
+    if (dragUpdateDetail.globalPosition.dy >= 200 &&
+        dragUpdateDetail.globalPosition.dy <= 500) {
       isDragging = true;
       isDraggingOutside = false;
 
@@ -1041,27 +1119,33 @@ class SocialReactionCollectionState extends State<SocialReactionCollection> with
         animControlIconWhenDragInside.forward();
       }
 
-      if (dragUpdateDetail.globalPosition.dx >= 20 && dragUpdateDetail.globalPosition.dx < 83) {
+      if (dragUpdateDetail.globalPosition.dx >= 20 &&
+          dragUpdateDetail.globalPosition.dx < 83) {
         if (currentIconFocus != 1) {
           handleWhenDragBetweenIcon(1);
         }
-      } else if (dragUpdateDetail.globalPosition.dx >= 83 && dragUpdateDetail.globalPosition.dx < 126) {
+      } else if (dragUpdateDetail.globalPosition.dx >= 83 &&
+          dragUpdateDetail.globalPosition.dx < 126) {
         if (currentIconFocus != 2) {
           handleWhenDragBetweenIcon(2);
         }
-      } else if (dragUpdateDetail.globalPosition.dx >= 126 && dragUpdateDetail.globalPosition.dx < 180) {
+      } else if (dragUpdateDetail.globalPosition.dx >= 126 &&
+          dragUpdateDetail.globalPosition.dx < 180) {
         if (currentIconFocus != 3) {
           handleWhenDragBetweenIcon(3);
         }
-      } else if (dragUpdateDetail.globalPosition.dx >= 180 && dragUpdateDetail.globalPosition.dx < 233) {
+      } else if (dragUpdateDetail.globalPosition.dx >= 180 &&
+          dragUpdateDetail.globalPosition.dx < 233) {
         if (currentIconFocus != 4) {
           handleWhenDragBetweenIcon(4);
         }
-      } else if (dragUpdateDetail.globalPosition.dx >= 233 && dragUpdateDetail.globalPosition.dx < 286) {
+      } else if (dragUpdateDetail.globalPosition.dx >= 233 &&
+          dragUpdateDetail.globalPosition.dx < 286) {
         if (currentIconFocus != 5) {
           handleWhenDragBetweenIcon(5);
         }
-      } else if (dragUpdateDetail.globalPosition.dx >= 286 && dragUpdateDetail.globalPosition.dx < 340) {
+      } else if (dragUpdateDetail.globalPosition.dx >= 286 &&
+          dragUpdateDetail.globalPosition.dx < 340) {
         if (currentIconFocus != 6) {
           handleWhenDragBetweenIcon(6);
         }
