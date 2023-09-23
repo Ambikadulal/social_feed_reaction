@@ -1,6 +1,5 @@
 
-This is a fully dynamic package for incorporating social reactions into your flutter application as needed. Flutter Social Reaction is a fully customizable widget that allows you to pass your favorite emo and assets if necessary, while sample icons are already included in the package.
-
+Introducing Flutter Social Reaction, a versatile Flutter package for seamlessly integrating social reactions into your app. Customize emojis and assets as needed, or use the included sample icons for quick implementation. Enhance user engagement and feedback effortlessly with this flexible widget.
 ## Features
 
 ![social_reaction_ui](https://user-images.githubusercontent.com/55906788/220020033-ee2c55ac-1a0f-42c0-a90a-902ee5d49527.gif)
@@ -43,46 +42,31 @@ class SocialReactionMainPage extends StatelessWidget {
 You can call SocialReactionCollection() anywhere in your application and pass the parameters listed below to make full use of this package. The package handles all controllers, animations, and positions.
 
 ## Parameters
+You can pass your assets and text through these values in a tabular format for your Flutter readme file:
 
-You can pass your assets and text through these values.
+| Value         | Description                        |
+|---------------|------------------------------------|
+| `likeGif`     | Your custom like GIF asset         |
+| `likePng`     | Your custom like PNG asset         |
+| `likeFillPng` | Your custom initial like PNG asset |
+| `loveGif`     | Your custom love GIF asset         |
+| `lovePng`     | Your custom love PNG asset         |
+| `hahaGif`     | Your custom haha GIF asset         |
+| `hahaPng`     | Your custom haha PNG asset         |
+| `wowGif`      | Your custom wow GIF asset          |
+| `wowPng`      | Your custom wow PNG asset          |
+| `sadGif`      | Your custom sad GIF asset          |
+| `sadPng`      | Your custom sad PNG asset          |
+| `angryGif`    | Your custom angry GIF asset        |
+| `angryPng`    | Your custom angry PNG asset        |
+| `likeText`    | Your custom like text asset        |
+| `loveText`    | Your custom love text asset        |
+| `hahaText`    | Your custom haha text asset        |
+| `wowText`     | Your custom wow text asset         |
+| `sadText`     | Your custom sad text asset         |
+| `angryText`   | Your custom angry text asset       |
 
-String? likeGif     -> pass string for your own like gif assets.
-
-String? likePng     -> pass string for your own like png assets.
-
-String? likeFillPng -> pass string for your own initial like png assets.
-
-String? loveGif     -> pass string for your own love gif assets.
-
-String? lovePng     -> pass string for your own love png assets.
-
-String? hahaGif     -> pass string for your own haha gif assets.
-
-String? hahaPng     -> pass string for your own haha png assets.
-
-String? wowGif      -> pass string for your own wow gif assets.
-
-String? wowPng      -> pass string for your own wow png assets.
-
-String? sadGif      -> pass string for your own sad gif assets.
-
-String? sadPng      -> pass string for your own sad png assets.
-
-String? angryGif    -> pass string for your own angry gif assets.
-
-String? angryPng    -> pass string for your own angry png assets.
-
-String? likeText    -> pass string for your own like text assets.
-
-String? loveText    -> pass string for your own love text assets.
-
-String? hahaText    -> pass string for your own haha text assets.
-
-String? wowText     -> pass string for your own wow text assets.
-
-String? sadText     -> pass string for your own sad text assets.
-
-String? angryText   -> pass string for your own angry text assets.
+Use these values to customize your Flutter application with the desired assets and text for social reactions.
 
 ## LICENSE
 Copyright (c) 2023 Ambika Dulal
